@@ -1,61 +1,114 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #f1c40f;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
+  background-color: var(--primary-color);
+  padding: 1em;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header nav ul li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 header nav a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--secondary-color);
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 section {
-    background-color: #f7f7f7;
-    padding: 2em;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 2em;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 input[type="email"], input[type="password"], input[type="number"] {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 button {
-    width: 100%;
-    height: 40px;
-    background-color: #333;
-    color
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1em;
+  }
+  section {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+  }
+  header nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
