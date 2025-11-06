@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaFollows - Consigue Seguidores en Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            background: linear-gradient(45deg, #E1306C, #F77737);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .coins-display {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            padding: 8px 16px;
+            border-radius: 25px;
+            color: #333;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .coin-icon {
+            font-size: 1.2rem;
+        }
+
+        .logout-btn {
+            background: #E1306C;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #C13584;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            min-height: calc(100vh - 140px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .login-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .login-section h1 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .login-section p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .instagram-login-btn {
+            background: linear-gradient(45deg, #E1306C, #F77737);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .instagram-login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
+        }
+
+        .dashboard-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .dashboard-section h1 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #E1306C;
+        }
+
+        .user-details h2 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .user-details p {
+            color: #666;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .action-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .action-card:hover {
+            border-color: #E1306C;
+            transform: translateY(-5px);
+        }
+
+        .action-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .action-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Hidden class for toggling */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">📱</div>
+                    <div class="logo-text">InstaFollows</div>
+                </div>
+                <div class="header-right">
+                    <div class="coins-display hidden" id="coinsDisplay">
+                        <span class="coin-icon">🪙</span>
+                        <span id="coinsCount">0</span>
+                    </div>
+                    <button class="logout-btn hidden" id="logoutBtn">Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Login Section (Visible when not logged in) -->
+            <section class="login-section" id="loginSection">
+                <h1>¡Bienvenido a InstaFollows!</h1>
+                <p>Conecta tu cuenta de Instagram y comienza a ganar seguidores reales. Nuestra plataforma te ayuda a crecer tu presencia en Instagram de forma orgánica y segura.</p>
+                <a href="#" class="instagram-login-btn" id="instagramLogin">
+                    <span>📷</span>
+                    Iniciar Sesión con Instagram
+                </a>
+            </section>
+
+            <!-- Dashboard Section (Visible when logged in) -->
+            <section class="dashboard-section hidden" id="dashboardSection">
+                <h1>Tu Panel de Control</h1>
+                
+                <div class="user-info">
+                    <img src="" alt="Avatar" class="user-avatar" id="userAvatar">
+                    <div class="user-details">
+                        <h2 id="userName">Usuario</h2>
+                        <p id="userFollowers">0 seguidores</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="currentFollowers">0</div>
+                        <div class="stat-label">Seguidores Actuales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="gainedFollowers">0</div>
+                        <div class="stat-label">Seguidores Ganados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="availableCoins">0</div>
+                        <div class="stat-label">Monedas Disponibles</div>
+                    </div>
+                </div>
+
+                <div class="actions-grid">
+                    <div class="action-card" onclick="earnCoins()">
+                        <h3>Ganar Monedas</h3>
+                        <p>Completa tareas para ganar monedas y conseguir más seguidores</p>
+                    </div>
+                    <div class="action-card" onclick="getFollowers()">
+                        <h3>Conseguir Seguidores</h3>
+                        <p>Usa tus monedas para conseguir seguidores reales</p>
+                    </div>
+                    <div class="action-card" onclick="viewAnalytics()">
+                        <h3>Ver Estadísticas</h3>
+                        <p>Analiza tu crecimiento y rendimiento en Instagram</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">© 2024 InstaFollows - Todos los derechos reservados</div>
+                <div class="footer-text">Creciendo juntos en Instagram</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Estado de la aplicación
+        let isLoggedIn = false;
+        let userCoins = 0;
+        let userData = null;
+
+        // Elementos del DOM
+        const loginSection = document.getElementById('loginSection');
+        const dashboardSection = document.getElementById('dashboardSection');
+        const coinsDisplay = document.getElementById('coinsDisplay');
+        const coinsCount = document.getElementById('coinsCount');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const instagramLogin = document.getElementById('instagramLogin');
+        const userAvatar = document.getElementById('userAvatar');
+        const userName = document.getElementById('userName');
+        const userFollowers = document.getElementById('userFollowers');
+        const currentFollowers = document.getElementById('currentFollowers');
+        const gainedFollowers = document.getElementById('gainedFollowers');
+        const availableCoins = document.getElementById('availableCoins');
+
+        // Función para simular login con Instagram
+        instagramLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            simulateInstagramLogin();
+        });
+
+        // Función para cerrar sesión
+        logoutBtn.addEventListener('click', function() {
+            logout();
+        });
+
+        // Simulación de login con Instagram
+        function simulateInstagramLogin() {
+            // En una implementación real, aquí iría la autenticación con OAuth de Instagram
+            isLoggedIn = true;
+            userCoins = 150;
+            userData = {
+                username: "usuario_instagram",
+                fullName: "Usuario de Instagram",
+                followers: 1250,
+                avatar: "https://via.placeholder.com/150"
+            };
+
+            updateUI();
+        }
+
+        // Función para cerrar sesión
+        function logout() {
+            isLoggedIn = false;
+            userCoins = 0;
+            userData = null;
+            updateUI();
+        }
+
+        // Actualizar la interfaz de usuario
+        function updateUI() {
+            if (isLoggedIn) {
+                loginSection.classList.add('hidden');
+                dashboardSection.classList.remove('hidden');
+                coinsDisplay.classList.remove('hidden');
+                logoutBtn.classList.remove('hidden');
+
+                // Actualizar datos del usuario
+                coinsCount.textContent = userCoins;
+                availableCoins.textContent = userCoins;
+                userName.textContent = userData.fullName;
+                userFollowers.textContent = `${userData.followers.toLocaleString()} seguidores`;
+                currentFollowers.textContent = userData.followers.toLocaleString();
+                gainedFollowers.textContent = "+250";
+                userAvatar.src = userData.avatar;
+            } else {
+                loginSection.classList.remove('hidden');
+                dashboardSection.classList.add('hidden');
+                coinsDisplay.classList.add('hidden');
+                logoutBtn.classList.add('hidden');
+            }
+        }
+
+        // Funciones de las acciones
+        function earnCoins() {
+            userCoins += 50;
+            updateUI();
+            alert('¡Has ganado 50 monedas!');
+        }
+
+        function getFollowers() {
+            if (userCoins >= 100) {
+                userCoins -= 100;
+                userData.followers += 10;
+                updateUI();
+                alert('¡Has ganado 10 nuevos seguidores!');
+            } else {
+                alert('No tienes suficientes monedas. Necesitas 100 monedas para conseguir seguidores.');
+            }
+        }
+
+        function viewAnalytics() {
+            alert('Aquí verías tus estadísticas detalladas de crecimiento en Instagram.');
+        }
+
+        // Inicializar la aplicación
+        updateUI();
+    </script>
+</body>
+</html>
