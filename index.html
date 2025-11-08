@@ -382,6 +382,11 @@ window.addEventListener('DOMContentLoaded', () => {
             { titulo: "Tablet iPad", precio: "$429", icono: "fas fa-tablet-alt" },
             { titulo: "Reloj Inteligente", precio: "$199", icono: "fas fa-clock" },
             { titulo: "Consola PS5", precio: "$499", icono: "fas fa-gamepad" },
+            { titulo: "Drone Profesional", precio: "$899", icono: "fas fa-helicopter" },
+            { titulo: "Auriculares Bluetooth", precio: "$129", icono: "fas fa-headphones" },
+            { titulo: "Tablet iPad", precio: "$429", icono: "fas fa-tablet-alt" },
+            { titulo: "Reloj Inteligente", precio: "$199", icono: "fas fa-clock" },
+            { titulo: "Consola PS5", precio: "$499", icono: "fas fa-gamepad" },
             { titulo: "Drone Profesional", precio: "$899", icono: "fas fa-helicopter" }
         ];
 
@@ -393,22 +398,7 @@ window.addEventListener('DOMContentLoaded', () => {
             { titulo: "Traducción", precio: "$0.10/palabra", icono: "fas fa-language" },
             { titulo: "Cuidado de Mascotas", precio: "$25/día", icono: "fas fa-paw" },
             { titulo: "Clases de Inglés", precio: "$35/hora", icono: "fas fa-graduation-cap" },
-            { titulo: "Fotografía", precio: "$150/sesión", icono: "fas fa-camera-retro" },
-            { titulo: "Programación", precio: "$70/hora", icono: "fas fa-code" },
-            { titulo: "Consultoría", precio: "$100/hora", icono: "fas fa-chart-line" }
-        ];
-
-        const vehiculos = [
-            { titulo: "Toyota Corolla 2023", precio: "$22,000", icono: "fas fa-car" },
-            { titulo: "Honda Civic 2022", precio: "$20,500", icono: "fas fa-car" },
-            { titulo: "BMW M3 2021", precio: "$65,000", icono: "fas fa-car" },
-            { titulo: "Yamaha R6", precio: "$8,999", icono: "fas fa-motorcycle" },
-            { titulo: "Ford F-150 2020", precio: "$35,000", icono: "fas fa-truck-pickup" },
-            { titulo: "Tesla Model 3", precio: "$42,000", icono: "fas fa-car" },
-            { titulo: "Harley Davidson", precio: "$15,000", icono: "fas fa-motorcycle" },
-            { titulo: "Audi A4 2022", precio: "$38,500", icono: "fas fa-car" },
-            { titulo: "Kawasaki Ninja", precio: "$7,200", icono: "fas fa-motorcycle" },
-            { titulo: "Jeep Wrangler", precio: "$32,000", icono: "fas fa-car" }
+            { titulo: "Fotografía", precio: "$150/sesión", icono: "fas fa-camera-retro" }
         ];
 
         // Función para mezclar array aleatoriamente
@@ -419,7 +409,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // Función para generar los carruseles
         function generarCarrusel(contenedorId, datos) {
             const contenedor = document.getElementById(contenedorId);
-            const datosMezclados = shuffleArray([...datos]).slice(0, 10);
+            const datosMezclados = shuffleArray([...datos]).slice(0, 15);
             
             contenedor.innerHTML = datosMezclados.map(item => `
                 <div class="card">
@@ -438,7 +428,6 @@ window.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('DOMContentLoaded', function() {
             generarCarrusel('productos-carousel', productos);
             generarCarrusel('servicios-carousel', servicios);
-            generarCarrusel('vehiculos-carousel', vehiculos);
         });
     </script>
 </body>
