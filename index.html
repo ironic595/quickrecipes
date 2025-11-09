@@ -115,7 +115,7 @@
         
         .card {
             background: rgba(255,255,255,0.2);
-            border-radius: 10px;
+            border-radius: 7px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s;
@@ -128,14 +128,66 @@
         .card-img {
             width: 100%;
             height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 3rem;
         }
-        
+        .card-img[data-category="pasta"] {
+        background-image: url('https://i.blogs.es/c02417/espagueti-al-sugo-finto/450_1000.jpg');  
+        }
+        .card-img[data-category="meat"] {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/050/897/750/non_2x/platter-of-grilled-meats-including-sausages-steaks-and-sauces-on-a-black-background-photo.jpeg');  
+        }
+        .card-img[data-category="starter"] {
+        background-image: url('https://www.elespectador.com/resizer/v2/6TF4ADPKNJHBPDZ7OYBH62LAMU.jpg');  
+        }
+        .card-img[data-category="colddishes"] {
+        background-image: url('https://i.ytimg.com/vi/ikQr8RFjmWw/hq720.jpg');  
+        }
+        .card-img[data-category="sandwich"] {
+        background-image: url('https://www.lorenzano.co/Portals/lorenzano/Images/banner-ideas-de-sandwiches-desktop.jpg');  
+        }
+        .card-img[data-category="fish"] {
+        background-image: url('https://i.pinimg.com/736x/90/4d/10/904d10593aa022e8d6d1130c4a92ced2.jpg');  
+        }
+        .card-img[data-category="dough"] {
+        background-image: url('https://malkapro.es/wp-content/uploads/2017/02/masa-pan-trigo-768x512.jpg');  
+        }
+        .card-img[data-category="pizza"] {
+        background-image: url('https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg');  
+        }
+        .card-img[data-category="soups"] {
+        background-image: url('https://recetas.encolombia.com/wp-content/uploads/2018/10/Receta-Sopa-Arroz-Tipica-Colombiana.jpg');  
+        }
+        .card-img[data-category="typical"] {
+        background-image: url('https://recetas.encolombia.com/wp-content/uploads/2018/10/Receta-Sopa-Arroz-Tipica-Colombiana.jpg');  
+        }
+        .card-img[data-category="cookies"] {
+        background-image: url('https://alicante.com.ar/wp-content/uploads/2023/12/2708_receta.jpg');  
+        }
+        .card-img[data-category="cakes"] {
+        background-image: url('https://cdn.elcocinerocasero.com/imagen/receta/1000/2018-03-21-12-36-09/lemon-pie.jpeg');  
+        }
+        .card-img[data-category="vegetal"] {
+        background-image: url('https://www.findingzest.com/wp-content/uploads/2017/12/Simply-Sauteed-Vegetables-with-Country-Crock.jpg');  
+        }
+        .card-img[data-category="desfruits"] {
+        background-image: url('https://hips.hearstapps.com/hmg-prod/images/fruit-tart-index-65ef54d972bb1.jpg');  
+        }
+        .card-img[data-category="deschoco"] {
+        background-image: url('https://www.bhg.com/thmb/4ZKgbONHp89Ak5_jxcQB4027nu8=/1851x0/filters:no_upscale():strip_icc()/triple-chocolate-cake-peppermint-ganache-RU350473-756aa4c25dfe4e32b353c5bba9298afe.jpg');  
+        }
+        .card-img[data-category="desgelatin"] {
+        background-image: url('https://easychefpro.com/cdn/shop/files/easychef-pro-recipe-crisp-citrus-gelatin-salad-with-crunchy-veggies-36877788741715_grande.jpg');  
+        }
+        .card-img[data-category="desmore"] {
+        background-image: url('https://www.recetasnestle.com.mx/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/54c6cbcbc6d611e056122d64560cd9c1.jpg');  
+        }
+        .card-img[data-category="icecream"] {
+        background-image: url('https://www.allrecipes.com/thmb/SI6dn__pfJb9G5eBpYAqkyGCLxQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/50050-five-minute-ice-cream-DDMFS-4x3-076-fbf49ca6248e4dceb3f43a4f02823dd9.jpg');  
+        }
         .card-content {
             padding: 1rem;
         }
@@ -327,7 +379,132 @@ window.addEventListener('DOMContentLoaded', () => {
     <section class="section">
         <h2 class="section-title"><i class="fas fa-shopping-bag"></i>Categories</h2>
         <div class="carousel" id="productos-carousel">
-            <!-- Las imágenes se generarán con JavaScript -->
+            <div class="card">
+                    <div class="card-img" data-category="starter">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Starter dishes</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="colddishes">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Cold dishes</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="meat">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Meat</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="sandwich">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Sandwiches</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="fish">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Fish and seafood</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="typical">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Typical foods</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="soups">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Soups</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="pasta">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Pasta</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="dough">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Dough</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="vegetal">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Vegetables</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="pizza">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Pizza</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="icecream">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Ice cream</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="cakes">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Cakes</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="desfruit">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Fruit desserts</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="deschoco">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Chocolate desserts</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="desgelatin">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Gelatin desserts</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="desmore">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">More desserts</div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-img" data-category="cookies">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Cookies</div>
+                    </div>
+            </div>
         </div>
     </section>
 
@@ -372,25 +549,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     <script>
         // Datos de ejemplo para los anuncios
-        const productos = [
-            { titulo: "iPhone 14 Pro", precio: "$999", icono: "fas fa-mobile-alt" },
-            { titulo: "Laptop Gaming", precio: "$1,299", icono: "fas fa-laptop" },
-            { titulo: "Zapatillas Deportivas", precio: "$89", icono: "fas fa-shoe-prints" },
-            { titulo: "Smart TV 55\"", precio: "$599", icono: "fas fa-tv" },
-            { titulo: "Cámara DSLR", precio: "$799", icono: "fas fa-camera" },
-            { titulo: "Auriculares Bluetooth", precio: "$129", icono: "fas fa-headphones" },
-            { titulo: "Tablet iPad", precio: "$429", icono: "fas fa-tablet-alt" },
-            { titulo: "Reloj Inteligente", precio: "$199", icono: "fas fa-clock" },
-            { titulo: "Consola PS5", precio: "$499", icono: "fas fa-gamepad" },
-            { titulo: "Drone Profesional", precio: "$899", icono: "fas fa-helicopter" },
-            { titulo: "Auriculares Bluetooth", precio: "$129", icono: "fas fa-headphones" },
-            { titulo: "Tablet iPad", precio: "$429", icono: "fas fa-tablet-alt" },
-            { titulo: "Reloj Inteligente", precio: "$199", icono: "fas fa-clock" },
-            { titulo: "Consola PS5", precio: "$499", icono: "fas fa-gamepad" },
-            { titulo: "Drone Profesional", precio: "$899", icono: "fas fa-helicopter" }
-        ];
-
-        const servicios = [
+            const servicios = [
             { titulo: "Limpieza Profesional", precio: "$50/hora", icono: "fas fa-broom" },
             { titulo: "Clases de Música", precio: "$30/hora", icono: "fas fa-music" },
             { titulo: "Reparación PC", precio: "$40/hora", icono: "fas fa-tools" },
@@ -413,7 +572,7 @@ window.addEventListener('DOMContentLoaded', () => {
             
             contenedor.innerHTML = datosMezclados.map(item => `
                 <div class="card">
-                    <div class="card-img">
+                    <div class="card-img" data-category="${item.category}">
                         <i class="${item.icono}"></i>
                     </div>
                     <div class="card-content">
@@ -426,7 +585,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // Generar todos los carruseles al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
-            generarCarrusel('productos-carousel', productos);
             generarCarrusel('servicios-carousel', servicios);
         });
     </script>
