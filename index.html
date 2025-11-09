@@ -391,14 +391,6 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="carousel" id="recetas-carousel">
             <!-- Las imágenes se generarán con JavaScript -->
         </div>
-        <div class="card">
-                    <div class="card-img" data-category="vermas">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">All recipes</div>
-                    </div>
-                </div>
     </section>
 
     <!-- Servicios -->
@@ -489,6 +481,20 @@ window.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('DOMContentLoaded', function() {
             generarCarrusel2('recetas-carousel', recetas);
         });
+// Después de crear tus 9 divs, agrega:
+const carrusel = document.querySelector('.recetas-carousel');
+const cardFinal = document.createElement('div');
+cardFinal.className = 'card';
+cardFinal.innerHTML = `
+    <div class="card-img" data-category="vermas">
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="card-content">
+        <div class="card-title">All recipes</div>
+    </div>
+`;
+carrusel.appendChild(cardFinal);
+     
     </script>
 
 
