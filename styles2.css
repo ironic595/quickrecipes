@@ -1,0 +1,350 @@
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #D6BB5A; }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #004687 0%, #667eea 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Search Bar */
+        .search-section {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .search-input {
+            background: rgba(255,255,255,0.2);
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        /* Carousel Sections */
+        .section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-title .dark-mode{
+            color: #e8e8e8;
+        }
+        
+        .carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+            gap: 1rem;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.2);
+            border-radius: 7px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        }
+        .card-img[data-category="pasta"] {
+        background-image: url('pastas.jpg');
+        }
+        .card-img[data-category="meat"] {
+        background-image: url('carne.jpg'); 
+        }
+        .card-img[data-category="starter"] {
+        background-image: url('canapes.jpg');
+        }
+        .card-img[data-category="colddishes"] {
+        background-image: url('tomaterelleno.jpg'); 
+        }
+        .card-img[data-category="sandwich"] {
+        background-image: url('sandwiches.jpg'); 
+        }
+        .card-img[data-category="fish"] {
+        background-image: url('pescados.jpg');  
+        }
+        .card-img[data-category="dough"] {
+        background-image: url('masa.jpg');  
+        }
+        .card-img[data-category="pizza"] {
+        background-image: url('pizza.jpg');  
+        }
+        .card-img[data-category="soups"] {
+        background-image: url('sopa.jpg');  
+        }
+        .card-img[data-category="typical"] {
+        background-image: url('milanesaconpapas.jpg');  
+        }
+        .card-img[data-category="cookies"] {
+        background-image: url('pepas.jpg');  
+        }
+        .card-img[data-category="cakes"] {
+        background-image: url('pastel.jpg');  
+        }
+        .card-img[data-category="vegetal"] {
+        background-image: url('vegetales.jpg');  
+        }
+        .card-img[data-category="desfruits"] {
+        background-image: url('postrefrutas.jpg');  
+        }
+        .card-img[data-category="deschoco"] {
+        background-image: url('postrechoco.jpg');  
+        }
+        .card-img[data-category="desgelatin"] {
+        background-image: url('gelatina.jpg');  
+        }
+        .card-img[data-category="desmore"] {
+        background-image: url('flan.jpg');  
+        }
+        .card-img[data-category="icecream"] {
+        background-image: url('helado1.jpg');  
+        }
+        .card-img[data-category="burger"] {
+        background-image: url('hamburguesa.jpg');  
+        }
+        .card-img[data-category="vermas"] {
+        background-image:url('backdishes.jpg'); 
+        }
+        
+        .card-content {
+            padding: 1rem;
+        }
+        
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size:21px;
+        }
+        .card-title.dark-mode{
+            color:white;
+        }
+        .card-price {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #495057;
+        }
+        /* Fondo sugerido - Gris claro cálido */
+body {
+    background-color: #D6BB5A;
+    transition: background-color 0.3s ease;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #e8e8e8;
+}
+/* Placeholder en modo oscuro */
+body.dark-mode ::placeholder {
+    color: #b0b0b0; /* Gris claro */
+    opacity: 1;
+}
+
+/* Para navegadores específicos */
+body.dark-mode ::-webkit-input-placeholder {
+    color: #b0b0b0;
+}
+
+body.dark-mode :-ms-input-placeholder {
+    color: #b0b0b0;
+}
+
+body.dark-mode ::-moz-placeholder {
+    color: #b0b0b0;
+    opacity: 1;
+}
+/* Contenedor del botón */
+.theme-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Botón toggle */
+.theme-toggle {
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Ícono sol (visible en modo claro) */
+.theme-toggle .fa-sun {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffd700;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Ícono luna (visible en modo oscuro) */
+.theme-toggle .fa-moon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f0f0f0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Estados del botón */
+.theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Modo oscuro activo */
+body.dark-mode .theme-toggle .fa-sun {
+    opacity: 0;
+}
+
+body.dark-mode .theme-toggle .fa-moon {
+    opacity: 1;
+}
+
+a{
+  text-decoration: none;
+  color: black;  
+}   
+a:visited {
+  text-decoration: none;
+  color: black;    
+}          
+a.dark-mode {
+  color: #e8e8e8; /* Mismo color que :link */
+  text-decoration: none;
+}   
+a.dark-mode:visited {
+  color: #e8e8e8; /* Mismo color que :link */
+  text-decoration: none;
+}      
