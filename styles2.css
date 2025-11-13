@@ -132,7 +132,7 @@
         background-repeat: no-repeat;
         }
         .card-img[data-category="pasta"] {
-        background-image: url('/images/pastas.jpg');
+        background-image: url('images/pastas.jpg');
         }
         .card-img[data-category="meat"] {
         background-image: url('images/carne.jpg'); 
