@@ -30,26 +30,7 @@ Share</a>
         <i class="fas fa-sun"></i>
     </button>
 </div>
-   <script> // Toggle del tema
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    
-    // Guardar preferencia
-    const isDarkMode = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDarkMode);
-});
-
-// Cargar preferencia guardada
-window.addEventListener('DOMContentLoaded', () => {
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (savedDarkMode) {
-        body.classList.add('dark-mode');
-    }
-});</script>
-    <!-- Search Bar -->
+   <!-- Search Bar -->
     <section class="search-section">
         <div class="search-container">
             <input type="text" class="search-input" placeholder="Search recipes">
