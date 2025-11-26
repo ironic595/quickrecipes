@@ -9,14 +9,16 @@ function leerCSV(nombreArchivo) {
         const datos = [];
 
         for (let i = 1; i < filas.length; i++) {
-          const fila = filas[i].split(',');
-          const objeto = {};
+          if (filas[i]) {
+            const fila = filas[i].split(',');
+            const objeto = {};
 
-          for (let j = 0; j < columnas.length; j++) {
-            objeto[columnas[j]] = fila[j];
+            for (let j = 0; j < columnas.length; j++) {
+              objeto[columnas[j]] = fila[j];
+            }
+
+            datos.push(objeto);
           }
-
-          datos.push(objeto);
         }
 
         resolve(datos);
@@ -41,7 +43,7 @@ function crearElementos(datos, categoria) {
   estilo.innerHTML = css;
   document.head.appendChild(estilo);
 
-  const contenedor = document.getElementById('recetas-carousel');
+  const contenedor = document.getElementById('contenedor');
   contenedor.innerHTML = html;
 }
 
@@ -52,4 +54,4 @@ async function main() {
   crearElementos(datos, titulo);
 }
 
-window.onload = main;
+document.addEventListener('DOMContentLoaded', main);
