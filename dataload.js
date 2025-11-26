@@ -48,7 +48,7 @@ function crearElementos(datos, categoria) {
 // Función principal
 async function main() {
   const titulo = document.title;
-  const datos = await leerCSV('datos.csv');
+  const datos = await leerCSV('FILE_NAME.csv');
   crearElementos(datos, titulo);
 }
 
