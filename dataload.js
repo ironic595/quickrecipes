@@ -50,7 +50,7 @@ function crearElementos(datos, categoria) {
 // Función principal
 async function main() {
   const titulo = document.title.replace(/<title>|<\/title>/g, '');
-  const datos = await leerCSV('FILE_NAME.csv');
+  const datos = await leerCSV('filename.csv');
   crearElementos(datos, titulo);
 }
 
