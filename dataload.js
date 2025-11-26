@@ -34,8 +34,8 @@ function crearElementos(datos, categoria) {
 
   datos.forEach(dato => {
     if (dato.categoria === categoria) {
-      css += .card-img[data-category='${dato.titulo}'] { background-image: url('images/${dato.fotolink}'); }\n;
-      html += <A href='${dato.link}'><div class='card'><div class='card-img' data-category='${dato.titulo}'></div><div class='card-content'><div class='card-title'>${dato.titulo}</div></div></div></A>\n;
+    css += `.card-img[data-category="${dato['titulo']}"] { background-image: url('images/${dato['fotolink']}'); }\n`;
+html += `<A href='${dato['link']}'><div class='card'><div class='card-img' data-category="${dato['titulo']}"></div><div class='card-content'><div class='card-title'>${dato['titulo']}</div></div></div></A>\n`;
     }
   });
 
