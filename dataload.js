@@ -1,41 +1,55 @@
-fetch('https://script.google.com/macros/s/AKfycby6cjKcusU4cWQCxpf3-IBVSDSRb9qwostLxtXzlUHyMdAElt0-Acha28JJjQNbLQ5V/exec')
-            .then(response => response.json())
-            .then(data => {
-                const tituloPagina = document.title; // Título de la página
-                const carousel = document.getElementById('carousel');
+// Función para leer el archivo CSV
+function leerCSV(nombreArchivo) {
+  return new Promise((resolve, reject) => {
+    fetch(nombreArchivo)
+      .then(response => response.text())
+      .then(data => {
+        const filas = data.split('\n');
+        const columnas = filas[0].split(',');
+        const datos = [];
 
-                // Filtrar las filas que coinciden con el título
-                const filasCoincidentes = data.filter(fila => fila.titulo === tituloPagina);
+        for (let i = 1; i < filas.length; i++) {
+          const fila = filas[i].split(',');
+          const objeto = {};
 
-                // Crear los divs para el carousel
-                filasCoincidentes.forEach(fila => {
-                    const card = document.createElement('div');
-                    card.classList.add('card');
+          for (let j = 0; j < columnas.length; j++) {
+            objeto[columnas[j]] = fila[j];
+          }
 
-                    const imagen = document.createElement('img');
-                    imagen.src = fila.imagenlink;
-                    imagen.alt = fila.titulo;
+          datos.push(objeto);
+        }
 
-                    const titulo = document.createElement('h3');
-                    titulo.textContent = fila.titulo;
+        resolve(datos);
+      })
+      .catch(error => reject(error));
+  });
+}
 
-                    const categoria = document.createElement('p');
-                    categoria.classList.add('categoria');
-                    categoria.textContent = `Categoría: ${fila.categoria}`;
+// Función para crear el CSS y HTML
+function crearElementos(datos, categoria) {
+  let css = '';
+  let html = '';
 
-                    const link = document.createElement('a');
-                    link.href = fila.link;
-                    link.textContent = 'Ver receta';
-                    link.target = '_blank'; // Abrir en nueva pestaña
+  datos.forEach(dato => {
+    if (dato.categoria === categoria) {
+      css += `.card-img[data-category='${dato.titulo}'] { background-image: url('images/${dato.fotolink}'); }\n`;
+      html += `<A href='${dato.link}'><div class='card'><div class='card-img' data-category='${dato.titulo}'></div><div class='card-content'><div class='card-title'>${dato.titulo}</div></div></div></A>\n`;
+    }
+  });
 
-                    // Añadir elementos al card
-                    card.appendChild(imagen);
-                    card.appendChild(titulo);
-                    card.appendChild(categoria);
-                    card.appendChild(link);
+  const estilo = document.createElement('style');
+  estilo.innerHTML = css;
+  document.head.appendChild(estilo);
 
-                    // Añadir card al carousel
-                    carousel.appendChild(card);
-                });
-            })
-            .catch(error => console.error('Error:', error));
+  const contenedor = document.getElementById('contenedor');
+  contenedor.innerHTML = html;
+}
+
+// Función principal
+async function main() {
+  const titulo = document.title;
+  const datos = await leerCSV('datos.csv');
+  crearElementos(datos, titulo);
+}
+
+main();
