@@ -43,7 +43,7 @@ html += `<A href='${dato['link']}'><div class='card'><div class='card-img' data-
   estilo.innerHTML = css;
   document.head.appendChild(estilo);
 
-  const contenedor = document.getElementById('contenedor');
+  const contenedor = document.getElementById('recetas-carousel');
   contenedor.innerHTML = html;
 }
 
