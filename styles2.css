@@ -348,3 +348,41 @@ a.dark-mode:visited {
   color: #e8e8e8; /* Mismo color que :link */
   text-decoration: none;
 }      
+@media (max-width: 576px) {   nav ul.men, nav:active ul
+{
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #222256;
+    right: 0;
+    margin-top: 15px;
+    width: 100%;
+    height: 100%;
+    border-radius: 1px;
+    z-index: 50;
+}     }@media (min-width: 577px) and (max-width: 919px){  
+nav ul.men, nav:active ul
+{
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #222256;
+    right: 0;
+    margin-top: 15px;
+    width: 50%;
+    height: 100%;
+    border-radius: 1px;
+    z-index: 50;
+}  }@media (min-width: 920px){ nav ul.men, nav:active ul
+{
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #222256;
+    right: 0;
+    margin-top: 15px;
+    width: 35%;
+    height: 100%;
+    border-radius: 1px;
+    z-index: 50;
+}  }
