@@ -416,8 +416,7 @@ nav ul {
 }
 
 /* Al hacer clic en el menú ícono, mostramos el menú */
-nav:focus-within ul,
-nav:hover ul {
+nav:focus-within ul {
   display: block;
 }
 
