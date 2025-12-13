@@ -108,15 +108,7 @@
         }
         
         .card {
-            background: rgba(255,255,255,0.2);
-            border-radius: 7px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
         }
         
         .card-img {
@@ -130,66 +122,6 @@
             background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        }
-        .card-img[data-category="pasta"] {
-        background-image: url('images/pastas.jpg');
-        }
-        .card-img[data-category="meat"] {
-        background-image: url('images/carne.jpg'); 
-        }
-        .card-img[data-category="starter"] {
-        background-image: url('images/canapes.jpg');
-        }
-        .card-img[data-category="colddishes"] {
-        background-image: url('images/tomaterelleno.jpg'); 
-        }
-        .card-img[data-category="sandwich"] {
-        background-image: url('images/sandwiches.jpg'); 
-        }
-        .card-img[data-category="fish"] {
-        background-image: url('images/pescados.jpg');  
-        }
-        .card-img[data-category="dough"] {
-        background-image: url('images/masa.jpg');  
-        }
-        .card-img[data-category="pizza"] {
-        background-image: url('images/pizza.jpg');  
-        }
-        .card-img[data-category="soups"] {
-        background-image: url('images/sopa.jpg');  
-        }
-        .card-img[data-category="typical"] {
-        background-image: url('images/milanesaconpapas.jpg');  
-        }
-        .card-img[data-category="cookies"] {
-        background-image: url('images/pepas.jpg');  
-        }
-        .card-img[data-category="cakes"] {
-        background-image: url('images/pastel.jpg');  
-        }
-        .card-img[data-category="vegetal"] {
-        background-image: url('images/vegetales.jpg');  
-        }
-        .card-img[data-category="desfruits"] {
-        background-image: url('images/postrefrutas.jpg');  
-        }
-        .card-img[data-category="deschoco"] {
-        background-image: url('images/postrechoco.jpg');  
-        }
-        .card-img[data-category="desgelatin"] {
-        background-image: url('images/gelatina.jpg');  
-        }
-        .card-img[data-category="desmore"] {
-        background-image: url('images/flan.jpg');  
-        }
-        .card-img[data-category="icecream"] {
-        background-image: url('images/helado1.jpg');  
-        }
-        .card-img[data-category="burger"] {
-        background-image: url('images/hamburguesa.jpg');  
-        }
-        .card-img[data-category="vermas"] {
-        background-image:url('images/backdishes.jpg'); 
         }
         
         .card-content {
@@ -250,30 +182,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Modo oscuro */
-body.dark-mode {
-    background-color: #121212;
-    color: #e8e8e8;
-}
-/* Placeholder en modo oscuro */
-body.dark-mode ::placeholder {
-    color: #b0b0b0; /* Gris claro */
-    opacity: 1;
-}
-
-/* Para navegadores específicos */
-body.dark-mode ::-webkit-input-placeholder {
-    color: #b0b0b0;
-}
-
-body.dark-mode :-ms-input-placeholder {
-    color: #b0b0b0;
-}
-
-body.dark-mode ::-moz-placeholder {
-    color: #b0b0b0;
-    opacity: 1;
-}
 /* Contenedor del botón */
 .theme-toggle-container {
     position: fixed;
