@@ -50,7 +50,7 @@ html += `<A href='${dato['link']}'><div class='card'><div class='card-img' data-
 // Función principal
 async function main() {
   const titulo = document.title.replace(/<title>|<\/title>/g, '');
-  const datos = await leerCSV('database.csv');
+  const datos = await leerCSV('FILE_NAME.csv');
   crearElementos(datos, titulo);
 }
 
