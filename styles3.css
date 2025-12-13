@@ -332,3 +332,11 @@ nav li.mene {
   margin: 0;
   list-style: none;
 }
+h1{
+ text-align:center;
+ font-size:22px;
+}
+h2{
+ text-align:center;
+ font-size:17px;
+}
