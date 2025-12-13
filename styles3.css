@@ -1,4 +1,4 @@
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; background: #D6BB5A; }
         
         /* Header */
@@ -9,7 +9,14 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
         
         .logo {
             font-size: 1.8rem;
@@ -18,7 +25,25 @@
             align-items: center;
             gap: 0.5rem;
         }
-
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
         .btn {
             background: #ff6b6b;
             color: white;
@@ -57,24 +82,34 @@
             border-radius: 25px;
             font-size: 1rem;
         }
-            .section-title {
+        
+        /* Carousel Sections */
+        .section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #495057;
             text-align:center;
             align-items: center;
             gap: 0.5rem;
         }
+        .section-title .dark-mode{
+            color: #e8e8e8;
+        }
         
         .carousel {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+            gap: 1rem;
         }
         
         .card {
             background: rgba(255,255,255,0.2);
-            border-radius: 10px;
+            border-radius: 7px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s;
@@ -84,7 +119,78 @@
             transform: translateY(-5px);
         }
         
-        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        }
+        .card-img[data-category="pasta"] {
+        background-image: url('images/pastas.jpg');
+        }
+        .card-img[data-category="meat"] {
+        background-image: url('images/carne.jpg'); 
+        }
+        .card-img[data-category="starter"] {
+        background-image: url('images/canapes.jpg');
+        }
+        .card-img[data-category="colddishes"] {
+        background-image: url('images/tomaterelleno.jpg'); 
+        }
+        .card-img[data-category="sandwich"] {
+        background-image: url('images/sandwiches.jpg'); 
+        }
+        .card-img[data-category="fish"] {
+        background-image: url('images/pescados.jpg');  
+        }
+        .card-img[data-category="dough"] {
+        background-image: url('images/masa.jpg');  
+        }
+        .card-img[data-category="pizza"] {
+        background-image: url('images/pizza.jpg');  
+        }
+        .card-img[data-category="soups"] {
+        background-image: url('images/sopa.jpg');  
+        }
+        .card-img[data-category="typical"] {
+        background-image: url('images/milanesaconpapas.jpg');  
+        }
+        .card-img[data-category="cookies"] {
+        background-image: url('images/pepas.jpg');  
+        }
+        .card-img[data-category="cakes"] {
+        background-image: url('images/pastel.jpg');  
+        }
+        .card-img[data-category="vegetal"] {
+        background-image: url('images/vegetales.jpg');  
+        }
+        .card-img[data-category="desfruits"] {
+        background-image: url('images/postrefrutas.jpg');  
+        }
+        .card-img[data-category="deschoco"] {
+        background-image: url('images/postrechoco.jpg');  
+        }
+        .card-img[data-category="desgelatin"] {
+        background-image: url('images/gelatina.jpg');  
+        }
+        .card-img[data-category="desmore"] {
+        background-image: url('images/flan.jpg');  
+        }
+        .card-img[data-category="icecream"] {
+        background-image: url('images/helado1.jpg');  
+        }
+        .card-img[data-category="burger"] {
+        background-image: url('images/hamburguesa.jpg');  
+        }
+        .card-img[data-category="vermas"] {
+        background-image:url('images/backdishes.jpg'); 
+        }
         
         .card-content {
             padding: 1rem;
@@ -93,10 +199,11 @@
         .card-title {
             font-weight: 600;
             margin-bottom: 0.5rem;
-            padding:15px;
-            line-height:1.5;
+            font-size:21px;
         }
-        
+        .card-title.dark-mode{
+            color:white;
+        }
         .card-price {
             color: #28a745;
             font-weight: bold;
@@ -137,69 +244,111 @@
             padding-top: 1rem;
             border-top: 1px solid #495057;
         }
-        /* Fondo sugerido - Gris claro cÃ¡lido */
+        /* Fondo sugerido - Gris claro cálido */
 body {
     background-color: #D6BB5A;
     transition: background-color 0.3s ease;
 }
 
-
-
-ol, ul{
-margin-top:30px;
-margin-bottom:30px;
-padding-left: 20px;}
-
-ol li {
-  font-weight: normal;
-padding:5px;
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #e8e8e8;
 }
-ul li{
-  font-weight: normal;
-padding:5px;
+/* Placeholder en modo oscuro */
+body.dark-mode ::placeholder {
+    color: #b0b0b0; /* Gris claro */
+    opacity: 1;
 }
 
-ol li::marker {
-  font-weight: bold;
-
+/* Para navegadores específicos */
+body.dark-mode ::-webkit-input-placeholder {
+    color: #b0b0b0;
 }
-ul li::marker {
-  font-weight: bold;
+
+body.dark-mode :-ms-input-placeholder {
+    color: #b0b0b0;
 }
-   
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            position: relative;
-        }
 
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: #004687 ;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 20px 20px;
-            border-radius: 2px;
-            color: rgba(0,0,0,0.7);
-        }
+body.dark-mode ::-moz-placeholder {
+    color: #b0b0b0;
+    opacity: 1;
+}
+/* Contenedor del botón */
+.theme-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
 
-        .dropdown-menu a {
-            display: block;
-            padding: 20px 20px;
-            text-decoration: none;
-           width:100%;
-        }
+/* Botón toggle */
+.theme-toggle {
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
 
-        .dropdown-menu a:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
+/* Ícono sol (visible en modo claro) */
+.theme-toggle .fa-sun {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffd700;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
 
-       @media (max-width: 576px) {   
-       nav ul.men, nav:active ul
+/* Ícono luna (visible en modo oscuro) */
+.theme-toggle .fa-moon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f0f0f0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Estados del botón */
+.theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Modo oscuro activo */
+body.dark-mode .theme-toggle .fa-sun {
+    opacity: 0;
+}
+
+body.dark-mode .theme-toggle .fa-moon {
+    opacity: 1;
+}
+
+a{
+  text-decoration: none;
+  color: #d1d1d1;  
+}   
+a:visited {
+  text-decoration: none;
+  color: #d1d1d1;     
+}          
+a.dark-mode {
+  color: #e8e8e8; /* Mismo color que :link */
+  text-decoration: none;
+}   
+a.dark-mode:visited {
+  color: #e8e8e8; /* Mismo color que :link */
+  text-decoration: none;
+}      
+@media (max-width: 576px) {   nav ul.men, nav:active ul
 {
     display: none;
     position: absolute;
@@ -212,7 +361,7 @@ ul li::marker {
     border-radius: 1px;
     z-index: 50;
 }     }@media (min-width: 577px) and (max-width: 919px){  
-    nav ul.men, nav:active ul
+nav ul.men, nav:active ul
 {
     display: none;
     position: absolute;
@@ -224,8 +373,7 @@ ul li::marker {
     height: 100%;
     border-radius: 1px;
     z-index: 50;
-}  }@media (min-width: 920px){ 
-    nav ul.men, nav:active ul
+}  }@media (min-width: 920px){ nav ul.men, nav:active ul
 {
     display: none;
     position: absolute;
@@ -238,8 +386,7 @@ ul li::marker {
     border-radius: 1px;
     z-index: 50;
 }  }
-
-nav {
+ nav {
   float: right;
   vertical-align: middle;
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
