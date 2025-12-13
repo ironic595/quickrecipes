@@ -18,25 +18,7 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
-        .nav-links {
-            display: relative;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
+
         .btn {
             background: #ff6b6b;
             color: white;
@@ -161,87 +143,8 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Modo oscuro */
-body.dark-mode {
-    background-color: #121212;
-    color: #e8e8e8;
-}
-/* Placeholder en modo oscuro */
-body.dark-mode ::placeholder {
-    color: #b0b0b0; /* Gris claro */
-    opacity: 1;
-}
 
-/* Para navegadores especÃ­ficos */
-body.dark-mode ::-webkit-input-placeholder {
-    color: #b0b0b0;
-}
 
-body.dark-mode :-ms-input-placeholder {
-    color: #b0b0b0;
-}
-
-body.dark-mode ::-moz-placeholder {
-    color: #b0b0b0;
-    opacity: 1;
-}
-/* Contenedor del botÃ³n */
-.theme-toggle-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-/* BotÃ³n toggle */
-.theme-toggle {
-    width: 60px;
-    height: 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-/* Ãcono sol (visible en modo claro) */
-.theme-toggle .fa-sun {
-    position: absolute;
-    left: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffd700;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-/* Ãcono luna (visible en modo oscuro) */
-.theme-toggle .fa-moon {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #f0f0f0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Estados del botÃ³n */
-.theme-toggle:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* Modo oscuro activo */
-body.dark-mode .theme-toggle .fa-sun {
-    opacity: 0;
-}
-
-body.dark-mode .theme-toggle .fa-moon {
-    opacity: 1;
-}
 ol, ul{
 margin-top:30px;
 margin-bottom:30px;
