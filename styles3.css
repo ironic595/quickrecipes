@@ -125,9 +125,8 @@
         }
         
         .card-title {
-            font-weight: 600;
             margin-bottom: 0.5rem;
-            font-size:21px;
+            font-size:19px;
         }
         .card-title.dark-mode{
             color:white;
@@ -339,5 +338,6 @@ h1{
 h2{
  text-align:left;
  font-size:22px;
- margin-bottom:22px;
+ margin-bottom:19px;
+ margin-top:21px;
 }
