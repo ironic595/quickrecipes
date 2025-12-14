@@ -341,6 +341,6 @@ h2{
  margin-bottom:19px;
  margin-top:21px;
 }
-ol{
+ol, ul{
  line-height: 2;
 }
