@@ -364,3 +364,8 @@ ol, ul{
         .share-box button:hover {
             background-color: #0056b3;
         }
+.intlink{
+ text-decoration:underline;
+ color:blue;
+}
+
