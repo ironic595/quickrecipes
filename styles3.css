@@ -368,4 +368,7 @@ ol, ul{
  text-decoration:underline;
  color:blue;
 }
-
+.pstyle{
+ font-weight:bold;
+ font-size:23px;
+}
