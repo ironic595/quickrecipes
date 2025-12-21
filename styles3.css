@@ -91,7 +91,7 @@
         }
         
         .section-title {
-            font-size: 1.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             text-align:center;
             align-items: center;
@@ -122,6 +122,11 @@
         
         .card-content {
             padding: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
         }
         
         .card-title {
@@ -340,9 +345,12 @@ h2{
  font-size:22px;
  margin-bottom:19px;
  margin-top:21px;
+margin-left:15px;
 }
 ol, ul{
  line-height: 2;
+margin-left:35px;
+margin-bottom:20px;
 }
  .share-box {
             border: 1px solid #ccc;
@@ -367,8 +375,60 @@ ol, ul{
 .intlink{
  text-decoration:underline;
  color:blue;
+font-size:20px;
 }
+.links{
+display:inline;}
+
 .pstyle{
  font-weight:bold;
- font-size:23px;
+ font-size:20px;
+}
+b{margin-left:15px;
+font-size:20px;}
+button{cursor: pointer;background-color:#878787;}
+button.blike{
+padding:10px 15px 10px 15px;
+vertical-align:middle;
+border-radius:5px;
+border:none;
+}
+button:hover.blike{
+background-color:#66BFE8;
+}
+button.bshare{
+padding:10px 15px 10px 15px;
+vertical-align:middle;
+border-radius:5px;
+border:none;
+}
+button:hover.bshare{
+background-color:#66BFE8;
+}
+button.bview{
+padding:10px 15px 10px 15px;
+vertical-align:middle;
+border-radius:5px;
+border:none;
+}
+button:hover.bview{
+background-color:#66BFE8;
+}
+button{
+margin:5px;
+}
+.botones{
+width:100%;
+text-align:center;
+margin-bottom:20px;}
+
+.fa-solid, .fa-heart{
+color:#C71A1A;
+border-color:black;
+}
+.fas, .fa-share-alt{
+color:#F2D51D;
+}
+.fa, .fa-eye{
+color:#C8FF82;
 }
